@@ -7,12 +7,12 @@ Version
 ----
 
 ```sh
-ruby 1.9.3
+ruby 2.1.3
 ```
 Get the [code]
 -----------
 
-```ru
+```ruby
 
 # Hashes are Ruby's primary dictionary with keys/value pairs.
 hash = { 'animal' => 'cat','shoeSize' => 6}
@@ -94,7 +94,6 @@ h.select {|k,v| v >= 2 }  #=> {"two" => 2, "three" => 3}
 h = { "one" => 1, "two" => 2 }
 h.has_value?(100)   #=> true
 h.has_value?(999)   #=> false
-
-
 ```
+
 [code]:http://pastebin.com/Pw2P1qUA
