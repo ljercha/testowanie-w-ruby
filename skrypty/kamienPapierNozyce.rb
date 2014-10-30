@@ -16,28 +16,29 @@
 
 @elements = {'rock'=> 0, 'Spock'=> 1, 'paper'=> 2, 'lizard'=> 3, 'scissors'=> 4}
 
-def name_to_number(name)
-    return @elements[name]
+
+def name_to_number(name, ele)
+    return ele[name]
 end
 
-def number_to_name(number)
-	return @elements.key(number) # ruby version 1.9 >
+def number_to_name(number, ele)
+	return ele.key(number) # ruby version 1.9 >
 end
 
-def rpsls(player_choice) 
+def rpsls(player_choice, ele) 
     # print a blank line to separate consecutive games
     puts
     
     # print out the message for the player's choice
   puts "Player chooses #{player_choice}" 
     # convert the player's choice to player_number using the function name_to_number()
-    pnum = name_to_number(player_choice)
+    pnum = name_to_number(player_choice,ele)
     #pnum = 0
     # compute random guess for comp_number using random.randrange()
     comp_number = Random.rand(5)
     
     # convert comp_number to comp_choice using the function number_to_name()
-    comp_choice = number_to_name(comp_number)
+    comp_choice = number_to_name(comp_number,ele)
     
     # print out the message for computer's choice
     puts "Computer chooses #{comp_choice}"
@@ -57,10 +58,10 @@ def rpsls(player_choice)
 end
 
 # test your code - THESE CALLS MUST BE PRESENT IN YOUR SUBMITTED CODE
-rpsls("rock")
-rpsls("Spock")
-rpsls("paper")
-rpsls("lizard")
-rpsls("scissors")
+rpsls("rock",@elements)
+rpsls("Spock",@elements)
+rpsls("paper",@elements)
+rpsls("lizard",@elements)
+rpsls("scissors",@elements)
 
 # always remember to check your completed program against the grading rubric
