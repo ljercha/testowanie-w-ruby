@@ -1,4 +1,6 @@
 require 'simplecov'
+require 'spec_helper'
+
 SimpleCov.start
 
 require_relative '../../lib/wydarzenie'
@@ -18,6 +20,18 @@ describe Wydarzenie do
   describe "#data" do
     it "poprawne wprowadzenie daty podczas inicjalizacji" do
       expect(Wydarzenie.new("Wladimir Kliczko-Kubrat Pulew", "2014-11-15","Box").data).to be_kind_of Date
+    end
+  end
+
+  describe "#kategoria" do
+    it "poprawna kategoria" do
+      expect(Wydarzenie.new("Wladimir Kliczko-Kubrat Pulew", "2014-11-15","Box").kategoria).to be_kind_of String
+    end
+  end
+
+  describe "#nazwa" do
+    it "poprawna nazwa" do
+      expect(Wydarzenie.new("Wladimir Kliczko-Kubrat Pulew", "2014-11-15","Box").nazwa).to eq("Wladimir Kliczko-Kubrat Pulew")
     end
   end
 end

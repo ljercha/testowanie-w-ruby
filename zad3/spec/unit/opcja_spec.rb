@@ -1,11 +1,13 @@
 require 'simplecov'
+require 'spec_helper'
+
 SimpleCov.start
 
 require_relative '../../lib/opcja'
 
 describe Opcja do
 
-  it 'inicjalizacja opcja' do
+  it '#initialize' do
     expect { Opcja.new("Polska",1,1.14) }.to_not raise_error
   end
 
@@ -28,7 +30,7 @@ describe Opcja do
   end
 
   describe "#id" do
-    it "return value with currency" do
+    it "sprawdzamy poprawność id" do
       expect(Opcja.new("Polska strzeli wiecej niz 2 gole",3,3.0).id).to eq(3)
     end
   end
@@ -36,6 +38,12 @@ describe Opcja do
   describe "długoscNazwy" do
     it "sprawdzamy długość nazwy" do
       expect(Opcja.new("Sebastian Mila Gol",4,3.5).nazwa.to_s.length).to eq(18)
+    end
+  end
+
+  describe "#to_s" do
+    it "sprawdzamy wypis opcji" do
+      expect(Opcja.new("Polska strzeli wiecej niz 2 gole",3,3.0).to_s).to eq("Polska strzeli wiecej niz 2 gole 3.0 3")
     end
   end
 
