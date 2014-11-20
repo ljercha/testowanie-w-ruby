@@ -1,5 +1,4 @@
 require 'simplecov'
-require 'spec_helper'
 
 SimpleCov.start
 
