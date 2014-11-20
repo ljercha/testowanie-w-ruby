@@ -1,5 +1,3 @@
-require 'simplecov'
-SimpleCov.start
 
 require_relative '../szyfrowanie/szyfrowanieBiblioteka/'
 
