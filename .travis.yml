@@ -1,0 +1,12 @@
+language: ruby
+rvm:
+- 2.1.1
+env:
+- DB=postgresql
+cache: bundler
+before_script:
+- psql -c "CREATE DATABASE dbreview_test;" -U postgres
+- cp config/database.yml.travis config/database.yml
+- bundle exec rake db:test:load
+script:
+- bundle exec rspec
