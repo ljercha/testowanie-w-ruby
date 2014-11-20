@@ -11,25 +11,32 @@ class Przyklad
   zaklad1.dodajOpcja(Opcja.new("Niemcy",2,7.50))
   zaklad1.wybor = 1
 
-  puts zaklad1
-  zaklad1.drukujOpcje
+  #puts zaklad1
+  #zaklad1.drukujOpcje
 
-  meczyk2 = Wydarzenie.new("Mecz Anglia-Hiszpania","2014-11-19","Piłka nożna")
+  meczyk2 = Wydarzenie.new("Mecz Anglia-Hiszpania","2014-11-19","Siatkówka")
   zaklad2 = Zaklad.new("Zwyciezca: ",meczyk2)
   zaklad2.dodajOpcja(Opcja.new("Anglia",1,3.10))
   zaklad2.dodajOpcja(Opcja.new("Remis",'X',5.0))
   zaklad2.dodajOpcja(Opcja.new("Hiszpania",2,1.50))
   zaklad2.wybor = 'X'
 
-  puts zaklad2
-  zaklad2.drukujOpcje
+  #puts zaklad2
+  #zaklad2.drukujOpcje
 
-  szczesliwyKupon = Kupon.new(50)
-  szczesliwyKupon.dodajZaklad(zaklad1)
-  szczesliwyKupon.dodajZaklad(zaklad2)
+  kupon = Kupon.new(50)
+  kupon.dodajZaklad(zaklad1)
+  kupon.dodajZaklad(zaklad2)
+  puts kupon.drukuj
 
-  #1puts szczesliwyKupon
-  puts szczesliwyKupon.obliczWygrana
+  puts "\nSzczesliwy kupon:"
+  kupon.bezpiecznyKupon
+  kupon.drukuj
+
+  puts "\nRyzykowny kupon:\n"
+  kupon.ryzykownyKupon
+  kupon.drukuj
+
 
 end
 

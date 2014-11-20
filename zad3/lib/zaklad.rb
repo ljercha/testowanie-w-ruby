@@ -6,7 +6,7 @@ class Zaklad
   def initialize(nazwa, wydarzenie)
     @nazwa = nazwa
     @wydarzenie = wydarzenie
-    @wybor = 'X'
+    @wybor = 1
     @opcje = Array.new
   end
 
@@ -21,9 +21,12 @@ class Zaklad
     nazwa + wydarzenie.nazwa + " wybor-> " + wybor.to_s + " kurs-> " + wybranyKurs.to_s
   end
 
-  def drukujOpcje
+  def bezpiecznaOpcjaId
+    opcje.min_by { |x| x.kurs }.id
+  end
 
-    opcje.each {|x| print x}
+  def ryzykownaOpcjaId
+    opcje.max_by { |x| x.kurs }.id
   end
 
   def wybranyKurs

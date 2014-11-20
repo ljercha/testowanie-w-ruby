@@ -17,7 +17,7 @@ class Opcja
   end
 
   def to_s
-    nazwa + " " + kurs.to_s + " " + id.to_s + "\n"
+    nazwa + " " + kurs.to_s + " " + id.to_s
 
   end
 
