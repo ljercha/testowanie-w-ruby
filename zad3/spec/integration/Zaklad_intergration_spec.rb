@@ -1,4 +1,5 @@
-
+require 'simplecov'
+SimpleCov.start
 require_relative '../../lib/zaklad'
 require_relative '../../lib/wydarzenie'
 
