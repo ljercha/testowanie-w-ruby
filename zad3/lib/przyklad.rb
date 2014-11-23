@@ -11,8 +11,6 @@ class Przyklad
   zaklad1.dodajOpcja(Opcja.new("Niemcy",2,7.50))
   zaklad1.wybor = 1
 
-  #puts zaklad1
-  #zaklad1.drukujOpcje
 
   meczyk2 = Wydarzenie.new("Mecz Anglia-Hiszpania","2014-11-19","Siatkówka")
   zaklad2 = Zaklad.new("Zwyciezca: ",meczyk2)
@@ -21,12 +19,11 @@ class Przyklad
   zaklad2.dodajOpcja(Opcja.new("Hiszpania",2,1.50))
   zaklad2.wybor = 'X'
 
-  #puts zaklad2
-  #zaklad2.drukujOpcje
-
   kupon = Kupon.new(50)
   kupon.dodajZaklad(zaklad1)
   kupon.dodajZaklad(zaklad2)
+
+  puts "\Kupon użytkownika:"
   puts kupon.drukuj
 
   puts "\nSzczesliwy kupon:"
